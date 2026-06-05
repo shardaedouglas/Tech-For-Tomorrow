@@ -22,6 +22,7 @@ Tech for Tomorrow is a sustainability-focused web project created by Team Grapes
 - Technology Helping the Environment
 - The Hidden Environmental Costs
 - Artificial Intelligence and Sustainability (benefits and challenges)
+- Embedded real-world case study: Costs of AI
 - Interactive Carbon Footprint Calculator
 - Sustainable Technology Guide
 - Future Innovations
@@ -48,22 +49,13 @@ It returns an estimated impact level and practical recommendations.
 
 Open index.html in a browser.
 
-## GitHub Pages Deployment
-
-1. Push this repository to GitHub.
-2. Go to Settings, then Pages.
-3. Under Build and deployment, select Deploy from a branch.
-4. Choose main branch and /(root) folder.
-5. Save and wait for the site URL to be generated.
-
 ## Team
 
 Team Name: Grapes of Wrath
 
-Author: Shardae Douglas
+Contributors:
 
-Co-Authors:
-
+- Shardae Douglas
 - John Hunt
 - Chadwick Sachs
 - Jermaine Taylor
