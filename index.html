@@ -17,6 +17,59 @@
             border: 1px solid rgb(30 41 59);
             background: linear-gradient(145deg, rgb(15 23 42), rgb(2 6 23));
         }
+
+        .topic-btn {
+            border: 1px solid rgb(51 65 85);
+            background: rgb(15 23 42);
+            color: rgb(203 213 225);
+            transition: all 0.2s ease;
+        }
+
+        .topic-btn:hover {
+            border-color: rgb(16 185 129);
+            color: rgb(209 250 229);
+        }
+
+        .topic-btn.active {
+            border-color: rgb(16 185 129);
+            background: rgba(16, 185, 129, 0.12);
+            color: rgb(167 243 208);
+        }
+
+        .panel-shell {
+            border: 1px solid rgb(51 65 85);
+            background: rgba(2, 6, 23, 0.7);
+        }
+
+        .section-header-image {
+            margin-top: 1rem;
+            border: 1px solid rgb(51 65 85);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background: rgba(2, 6, 23, 0.75);
+        }
+
+        .section-header-image img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .section-header-image figcaption {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.75rem;
+            color: rgb(148 163 184);
+            border-top: 1px solid rgb(51 65 85);
+        }
+
+        .fade-in {
+            animation: panelFade 240ms ease;
+        }
+
+        @keyframes panelFade {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased">
@@ -28,6 +81,7 @@
                 <h1 class="text-lg font-bold">Tech for Tomorrow</h1>
             </div>
             <div class="hidden gap-4 text-sm text-slate-300 md:flex">
+                <a href="#audience" class="hover:text-emerald-300">Audience Lens</a>
                 <a href="#helping" class="hover:text-emerald-300">Solutions</a>
                 <a href="#costs" class="hover:text-emerald-300">Hidden Costs</a>
                 <a href="#case-study" class="hover:text-emerald-300">Case Study</a>
@@ -68,41 +122,92 @@
 
     <main class="mx-auto max-w-6xl space-y-8 px-5 pb-16">
 
-        <section class="section-card rounded-2xl p-6 md:p-8">
-            <h3 class="text-2xl font-bold text-white">Course Themes Addressed</h3>
-            <div class="mt-4 flex flex-wrap gap-2 text-sm">
-                <span class="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1">Environment and Sustainability</span>
-                <span class="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1">Artificial Intelligence and Machine Learning</span>
-                <span class="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1">Human Identity and Digital Culture</span>
-                <span class="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1">Prosperity and Livelihood</span>
-                <span class="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1">Humanizing Technology</span>
+        <section id="audience" class="section-card rounded-2xl p-6 md:p-8">
+            <h3 class="text-2xl font-bold text-white">Audience Lens: Why This Matters to You</h3>
+            <p class="mt-3 text-slate-300">
+                Your professor asked for stronger audience targeting, so this section makes the message practical for the people this project serves.
+            </p>
+            <div class="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-4">
+                    <h4 class="text-lg font-semibold text-emerald-300">College Students</h4>
+                    <p class="mt-2 text-sm text-slate-300">Device upgrades, streaming habits, and cloud storage choices can lower your footprint without sacrificing school productivity.</p>
+                </article>
+                <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-4">
+                    <h4 class="text-lg font-semibold text-emerald-300">Young Professionals</h4>
+                    <p class="mt-2 text-sm text-slate-300">Remote work tools and everyday digital workflows influence energy demand from networks, servers, and data centers.</p>
+                </article>
+                <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-4">
+                    <h4 class="text-lg font-semibold text-emerald-300">Educators</h4>
+                    <p class="mt-2 text-sm text-slate-300">This content supports classroom discussions about ethics, innovation, and environmental tradeoffs in modern technology systems.</p>
+                </article>
+                <article class="rounded-xl border border-slate-700 bg-slate-900/70 p-4">
+                    <h4 class="text-lg font-semibold text-emerald-300">Community Members</h4>
+                    <p class="mt-2 text-sm text-slate-300">Local infrastructure decisions around transport, water, and energy shape how sustainable technology works in daily life.</p>
+                </article>
             </div>
         </section>
 
         <section id="helping" class="section-card rounded-2xl p-6 md:p-8">
             <h3 class="text-2xl font-bold text-white">Technology Helping the Environment</h3>
-            <p class="mt-3 text-slate-300">Innovation can reduce emissions, improve efficiency, and protect natural systems when deployed responsibly.</p>
-            <ul class="mt-4 grid list-disc gap-2 pl-5 text-slate-200 md:grid-cols-2">
-                <li>Electric vehicles and cleaner transportation systems</li>
-                <li>Solar and wind energy expansion</li>
-                <li>Smart energy grids that reduce waste</li>
-                <li>AI tools for climate and weather monitoring</li>
-                <li>Precision agriculture that lowers water and fertilizer use</li>
-                <li>Water conservation and leakage detection technology</li>
-            </ul>
+            <p class="mt-3 text-slate-300">
+                Technology can reduce pollution, conserve resources, and improve environmental decision-making when deployed responsibly.
+                Select a focus area to explore how each innovation supports sustainability.
+            </p>
+            <div class="mt-5 grid gap-4 lg:grid-cols-12">
+                <div id="helpingButtons" class="grid gap-2 lg:col-span-4"></div>
+                <article id="helpingPanel" class="panel-shell rounded-xl p-5 lg:col-span-8"></article>
+            </div>
         </section>
 
         <section id="costs" class="section-card rounded-2xl p-6 md:p-8">
             <h3 class="text-2xl font-bold text-white">The Hidden Environmental Costs</h3>
-            <p class="mt-3 text-slate-300">Digital life still has a physical footprint, from mined materials to energy-hungry infrastructure.</p>
-            <ul class="mt-4 grid list-disc gap-2 pl-5 text-slate-200 md:grid-cols-2">
-                <li>Electronic waste from short replacement cycles</li>
-                <li>Rare earth and battery mineral mining</li>
-                <li>Energy use from data centers and cloud systems</li>
-                <li>Carbon emissions from streaming and online activity</li>
-                <li>Manufacturing impacts from constant device upgrades</li>
-                <li>Resource pressure from global hardware demand</li>
-            </ul>
+            <figure class="section-header-image">
+                <img src="Technology_Innovation_vs_Environmental_Cost.png" alt="Infographic contrasting technological progress with elemental environmental costs" loading="lazy">
+                <figcaption>The same systems that create breakthroughs can also intensify emissions, extraction, and infrastructure strain.</figcaption>
+            </figure>
+            <p class="mt-3 text-slate-300">
+                Digital services may feel invisible, but every click depends on physical resources, industrial systems, and energy-intensive infrastructure.
+                Open each impact area for deeper context.
+            </p>
+            <div class="mt-5 grid gap-4 md:grid-cols-3">
+                <div class="rounded-xl border border-rose-500/30 bg-rose-500/10 p-4">
+                    <p class="text-xs uppercase tracking-wide text-rose-200">Pressure Point</p>
+                    <p class="mt-1 text-2xl font-extrabold text-white">E-Waste</p>
+                    <p class="mt-1 text-sm text-slate-200">Fast device replacement cycles create one of the world’s fastest-growing waste streams.</p>
+                </div>
+                <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4">
+                    <p class="text-xs uppercase tracking-wide text-amber-200">Pressure Point</p>
+                    <p class="mt-1 text-2xl font-extrabold text-white">Data Center Energy</p>
+                    <p class="mt-1 text-sm text-slate-200">Cloud services rely on high-demand facilities that require constant power and cooling.</p>
+                </div>
+                <div class="rounded-xl border border-cyan-500/30 bg-cyan-500/10 p-4">
+                    <p class="text-xs uppercase tracking-wide text-cyan-200">Pressure Point</p>
+                    <p class="mt-1 text-2xl font-extrabold text-white">Resource Extraction</p>
+                    <p class="mt-1 text-sm text-slate-200">Mining for battery and rare-earth materials can damage ecosystems and communities.</p>
+                </div>
+            </div>
+            <div class="mt-5 space-y-3" id="costsAccordion">
+                <details class="rounded-xl border border-slate-700 bg-slate-900/70 p-4" open>
+                    <summary class="cursor-pointer font-semibold text-slate-100">Electronic Waste from Short Replacement Cycles</summary>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-300">Smartphones, laptops, and tablets are frequently replaced because of new product cycles and limited repairability. Improper disposal can release hazardous substances into soil and water, and many regions still lack safe recycling infrastructure.</p>
+                </details>
+                <details class="rounded-xl border border-slate-700 bg-slate-900/70 p-4">
+                    <summary class="cursor-pointer font-semibold text-slate-100">Rare Earth and Battery Mineral Mining</summary>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-300">Lithium, cobalt, nickel, and rare earth materials are essential for modern devices and batteries, but extraction can cause habitat destruction, water pollution, and social equity concerns in mining communities.</p>
+                </details>
+                <details class="rounded-xl border border-slate-700 bg-slate-900/70 p-4">
+                    <summary class="cursor-pointer font-semibold text-slate-100">Energy Use from Data Centers and Cloud Systems</summary>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-300">Cloud computing depends on large server facilities operating continuously. As AI, gaming, and communication demands rise, so does the electricity and cooling burden required to keep digital services available.</p>
+                </details>
+                <details class="rounded-xl border border-slate-700 bg-slate-900/70 p-4">
+                    <summary class="cursor-pointer font-semibold text-slate-100">Carbon Emissions from Streaming and Online Activity</summary>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-300">Streaming video, gaming, social media, and video calls all require transmission, processing, and storage across global networks. Small actions scale into substantial emissions when billions of users participate daily.</p>
+                </details>
+                <details class="rounded-xl border border-slate-700 bg-slate-900/70 p-4">
+                    <summary class="cursor-pointer font-semibold text-slate-100">Manufacturing and Global Hardware Demand</summary>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-300">A major share of a device’s lifetime footprint often comes before first use, during material extraction, assembly, and transport. Constant upgrade cycles increase industrial output and pressure global supply chains.</p>
+                </details>
+            </div>
         </section>
 
         <section id="calculator" class="section-card rounded-2xl p-6 md:p-8">
@@ -155,6 +260,10 @@
 
         <section id="ai" class="section-card rounded-2xl p-6 md:p-8">
             <h3 class="text-2xl font-bold text-white">Artificial Intelligence and Sustainability</h3>
+            <figure class="section-header-image">
+                <img src="The_Elemental_Cost_of_AI_11.PNG" alt="Infographic about AI energy, water, air, and extraction impacts and pathways toward conscious computation" loading="lazy">
+                <figcaption>AI can support climate solutions while also increasing energy, water, and hardware burdens if scaled without efficiency.</figcaption>
+            </figure>
             <div class="mt-5 grid gap-5 md:grid-cols-2">
                 <article class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
                     <h4 class="text-xl font-semibold text-emerald-300">Benefits</h4>
@@ -183,6 +292,16 @@
                 Explore a full interactive example showing environmental tradeoffs in AI systems.
                 This embedded site connects directly to the same themes in Tech for Tomorrow.
             </p>
+            <div class="mt-4">
+                <a
+                    href="https://shardaedouglas.github.io/CostsOfAI/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center rounded-lg bg-emerald-500 px-5 py-3 text-sm font-extrabold uppercase tracking-wide text-slate-900 transition hover:bg-emerald-400"
+                >
+                    Open Full Case Study in New Tab
+                </a>
+            </div>
             <div class="mt-5 overflow-hidden rounded-xl border border-slate-700 bg-slate-900">
                 <iframe
                     title="Costs of AI case study"
@@ -200,27 +319,32 @@
 
         <section id="guide" class="section-card rounded-2xl p-6 md:p-8">
             <h3 class="text-2xl font-bold text-white">Sustainable Technology Guide</h3>
-            <p class="mt-3 text-slate-300">Practical actions that reduce impact without giving up technology.</p>
-            <ul class="mt-4 grid list-disc gap-2 pl-5 text-slate-200 md:grid-cols-2">
-                <li>Extend device lifespan before upgrading</li>
-                <li>Repair instead of replacing when possible</li>
-                <li>Recycle electronics through certified programs</li>
-                <li>Choose energy-efficient devices and settings</li>
-                <li>Delete unnecessary cloud backups and files</li>
-                <li>Support companies with strong sustainability practices</li>
-            </ul>
+            <figure class="section-header-image">
+                <img src="Sustainable_Actions_and_Conscious_Computation.png" alt="Infographic on sustainable actions and conscious computation for industry and consumers" loading="lazy">
+                <figcaption>Practical habits from both industry and consumers can shrink technology's footprint without giving up digital progress.</figcaption>
+            </figure>
+            <p class="mt-3 text-slate-300">
+                Sustainable tech use is about smarter habits, not giving up digital tools. Pick one action and start this week.
+            </p>
+            <div id="guideButtons" class="mt-5 grid gap-2 sm:grid-cols-2 xl:grid-cols-3"></div>
+            <article id="guidePanel" class="panel-shell mt-4 rounded-xl p-5"></article>
         </section>
 
         <section id="future" class="section-card rounded-2xl p-6 md:p-8">
             <h3 class="text-2xl font-bold text-white">Future Innovations</h3>
-            <p class="mt-3 text-slate-300">Emerging ideas that may improve sustainability outcomes over the next decade.</p>
-            <ul class="mt-4 grid list-disc gap-2 pl-5 text-slate-200 md:grid-cols-2">
-                <li>Carbon capture and removal systems</li>
-                <li>Green AI models designed for lower energy use</li>
-                <li>More sustainable battery technologies</li>
-                <li>Smart city systems for efficient infrastructure</li>
-                <li>Circular economy models for electronics</li>
-            </ul>
+            <figure class="section-header-image">
+                <img src="Tech_for_Tomorrow_Sustainability_Innovations.png" alt="Infographic summarizing future sustainability innovations including green AI, circular electronics, and smart cities" loading="lazy">
+                <figcaption>Emerging technologies can reduce environmental impact when built around circularity, efficiency, and clean energy.</figcaption>
+            </figure>
+            <p class="mt-3 text-slate-300">
+                Use the carousel to explore innovations likely to shape sustainability over the next decade.
+            </p>
+            <article id="futurePanel" class="panel-shell mt-5 rounded-xl p-5"></article>
+            <div class="mt-4 flex items-center gap-3">
+                <button id="futurePrev" class="topic-btn rounded-lg px-4 py-2 text-sm font-semibold">Previous</button>
+                <button id="futureNext" class="topic-btn rounded-lg px-4 py-2 text-sm font-semibold">Next</button>
+                <p id="futureCount" class="text-sm text-slate-400"></p>
+            </div>
         </section>
 
         <section class="section-card rounded-2xl p-6 md:p-8">
@@ -252,6 +376,194 @@
     </footer>
 
     <script>
+        const helpingTopics = [
+            {
+                label: 'Cleaner Transportation',
+                title: 'Electric Vehicles and Cleaner Transportation Systems',
+                body: 'Transportation is one of the largest global emissions sources. Electric vehicles remove tailpipe pollution, and as power grids become greener, EVs become cleaner over time. Public transit upgrades, rail, bike-sharing, and smart traffic systems further reduce fuel use and urban air pollution.',
+                audience: 'For students and young professionals, transportation choices are one of the fastest personal ways to reduce carbon impact.'
+            },
+            {
+                label: 'Renewable Power',
+                title: 'Solar and Wind Energy Expansion',
+                body: 'Solar and wind generate electricity without direct carbon emissions during operation. Falling costs, better efficiency, and large-scale deployment have made renewables one of the fastest-growing global energy sources and a key strategy for reducing fossil fuel dependence.',
+                audience: 'For communities, renewable expansion strengthens long-term energy security while reducing pollution.'
+            },
+            {
+                label: 'Smart Grids',
+                title: 'Smart Energy Grids That Reduce Waste',
+                body: 'Traditional grids are less adaptive to real-time demand changes. Smart grids use sensors, automation, and analytics to detect outages faster, reduce transmission losses, and better integrate renewables into daily operations.',
+                audience: 'For city residents and policymakers, smarter grids mean fewer outages and more efficient infrastructure.'
+            },
+            {
+                label: 'AI Monitoring',
+                title: 'AI Tools for Climate and Weather Monitoring',
+                body: 'AI can process large climate datasets to forecast extreme weather, track ecosystem changes, monitor deforestation, and improve risk planning. Better forecasting enables earlier action from governments, schools, businesses, and households.',
+                audience: 'For educators and students, this is a strong example of AI used for public-good decision support.'
+            },
+            {
+                label: 'Precision Agriculture',
+                title: 'Precision Agriculture and Resource Efficiency',
+                body: 'Drones, sensors, GPS mapping, and analytics allow farmers to apply water, fertilizer, and pesticides only where needed. This reduces waste, lowers runoff into waterways, and supports stronger yields with less environmental damage.',
+                audience: 'For communities reliant on agriculture, these tools can protect soil and water while sustaining food production.'
+            },
+            {
+                label: 'Water Tech',
+                title: 'Water Conservation and Leakage Detection',
+                body: 'Smart meters and sensor networks can detect leaks before they become major failures. Automated irrigation, water recycling, and better treatment systems reduce freshwater losses and support long-term water sustainability.',
+                audience: 'For everyone, better water technology protects a limited resource under pressure from climate change and population growth.'
+            }
+        ];
+
+        const guideHabits = [
+            {
+                label: 'Keep Devices Longer',
+                title: 'Extend Device Lifespan Before Upgrading',
+                action: 'Delay non-essential upgrades, keep software current, and replace batteries or storage before replacing the whole device.',
+                impact: 'Manufacturing is often the largest part of a device footprint. Longer use means lower resource extraction and less e-waste.'
+            },
+            {
+                label: 'Repair First',
+                title: 'Repair Instead of Replacing',
+                action: 'For cracked screens, weak batteries, and charging issues, compare repair options before buying new hardware.',
+                impact: 'Repair conserves materials, lowers emissions from manufacturing, and supports a stronger right-to-repair culture.'
+            },
+            {
+                label: 'Recycle Responsibly',
+                title: 'Use Certified E-Waste Programs',
+                action: 'Wipe personal data and deliver old devices to trusted manufacturer, retailer, or local certified recycling programs.',
+                impact: 'Responsible recycling recovers valuable materials and prevents hazardous waste from contaminating ecosystems.'
+            },
+            {
+                label: 'Save Energy',
+                title: 'Choose Efficient Devices and Settings',
+                action: 'Enable power-saving modes, lower brightness, and use sleep settings instead of leaving devices running continuously.',
+                impact: 'Daily efficiency habits reduce electricity use and indirectly lower emissions from power generation.'
+            },
+            {
+                label: 'Clean Up Cloud Data',
+                title: 'Delete Unnecessary Backups and Files',
+                action: 'Remove duplicates, old downloads, and unused backups. Archive only what matters and avoid redundant copies.',
+                impact: 'Cloud storage relies on physical data centers. Less unnecessary storage helps reduce infrastructure demand.'
+            },
+            {
+                label: 'Buy Better',
+                title: 'Support Sustainability-Focused Companies',
+                action: 'Prioritize products from companies with repair options, take-back programs, transparent reporting, and renewable energy use.',
+                impact: 'Consumer demand can push the tech industry toward cleaner manufacturing and responsible sourcing.'
+            }
+        ];
+
+        const futureInnovations = [
+            {
+                title: 'Carbon Capture and Removal Systems',
+                text: 'Next-generation carbon capture can remove emissions from industrial facilities or directly from the air. As systems become cheaper and more efficient, they may help address hard-to-decarbonize sectors such as cement and aviation.',
+                relevance: 'Important because emissions cuts and carbon removal will likely need to work together.'
+            },
+            {
+                title: 'Green AI Models with Lower Energy Demand',
+                text: 'Researchers are developing efficient AI models and hardware that reduce computational requirements while preserving performance. This includes optimized software, smaller models, and cleaner data center operations.',
+                relevance: 'Important because AI growth should not automatically require proportionally higher energy consumption.'
+            },
+            {
+                title: 'More Sustainable Battery Technologies',
+                text: 'Emerging options like sodium-ion and solid-state batteries could reduce dependence on scarce materials while improving safety and durability. Better battery recycling will also recover more critical minerals.',
+                relevance: 'Important for EV growth, renewable storage, and reducing resource pressure in global supply chains.'
+            },
+            {
+                title: 'Smart City Infrastructure',
+                text: 'Urban sensor networks and automation can optimize traffic, reduce building energy waste, detect water leaks, and improve waste management efficiency in real time.',
+                relevance: 'Important because cities account for a large share of global emissions and resource use.'
+            },
+            {
+                title: 'Circular Electronics Economy',
+                text: 'Designing devices for repair, reuse, refurbishment, and remanufacturing keeps materials in circulation longer and reduces pressure on mining and landfill systems.',
+                relevance: 'Important for breaking the extract-use-dispose cycle that dominates current tech manufacturing.'
+            },
+            {
+                title: 'Additional Emerging Innovations',
+                text: 'Other promising areas include advanced storage, higher-efficiency solar, hydrogen for hard-to-electrify sectors, biodegradable electronics, and AI-assisted resource management.',
+                relevance: 'Important because no single innovation will solve sustainability challenges; combined progress matters.'
+            }
+        ];
+
+        function renderTopicPanel(panelEl, item) {
+            panelEl.classList.remove('fade-in');
+            panelEl.innerHTML = `
+                <p class="text-xs uppercase tracking-wide text-emerald-300">Focus Area</p>
+                <h4 class="mt-1 text-xl font-bold text-white">${item.title}</h4>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">${item.body}</p>
+                <div class="mt-4 rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
+                    <p class="text-xs uppercase tracking-wide text-emerald-200">Audience Relevance</p>
+                    <p class="mt-1 text-sm text-slate-100">${item.audience}</p>
+                </div>
+            `;
+            panelEl.classList.add('fade-in');
+        }
+
+        function initButtonPanel(containerId, panelId, items) {
+            const buttonsWrap = document.getElementById(containerId);
+            const panelEl = document.getElementById(panelId);
+            let activeIndex = 0;
+
+            items.forEach((item, index) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.textContent = item.label;
+                btn.className = `topic-btn rounded-lg px-4 py-3 text-left text-sm font-semibold ${index === 0 ? 'active' : ''}`;
+                btn.addEventListener('click', () => {
+                    activeIndex = index;
+                    Array.from(buttonsWrap.children).forEach((el, i) => {
+                        el.classList.toggle('active', i === activeIndex);
+                    });
+                    renderTopicPanel(panelEl, items[activeIndex]);
+                });
+                buttonsWrap.appendChild(btn);
+            });
+
+            renderTopicPanel(panelEl, items[0]);
+        }
+
+        function initFutureCarousel() {
+            const panel = document.getElementById('futurePanel');
+            const prevBtn = document.getElementById('futurePrev');
+            const nextBtn = document.getElementById('futureNext');
+            const count = document.getElementById('futureCount');
+            let current = 0;
+
+            function render() {
+                const item = futureInnovations[current];
+                panel.classList.remove('fade-in');
+                panel.innerHTML = `
+                    <p class="text-xs uppercase tracking-wide text-cyan-300">Innovation Spotlight</p>
+                    <h4 class="mt-1 text-xl font-bold text-white">${item.title}</h4>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-300">${item.text}</p>
+                    <div class="mt-4 rounded-lg border border-cyan-500/30 bg-cyan-500/10 p-3">
+                        <p class="text-xs uppercase tracking-wide text-cyan-200">Why It Matters</p>
+                        <p class="mt-1 text-sm text-slate-100">${item.relevance}</p>
+                    </div>
+                `;
+                panel.classList.add('fade-in');
+                count.textContent = `${current + 1} / ${futureInnovations.length}`;
+            }
+
+            prevBtn.addEventListener('click', () => {
+                current = (current - 1 + futureInnovations.length) % futureInnovations.length;
+                render();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                current = (current + 1) % futureInnovations.length;
+                render();
+            });
+
+            render();
+        }
+
+        initButtonPanel('helpingButtons', 'helpingPanel', helpingTopics);
+        initButtonPanel('guideButtons', 'guidePanel', guideHabits);
+        initFutureCarousel();
+
         const calculateBtn = document.getElementById('calculateBtn');
         const resultCard = document.getElementById('resultCard');
         const resultValue = document.getElementById('resultValue');
