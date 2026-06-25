@@ -355,36 +355,42 @@
                 label: 'Cleaner Transportation',
                 title: 'Electric Vehicles and Cleaner Transportation Systems',
                 body: 'Transportation is one of the largest global emissions sources. Electric vehicles remove tailpipe pollution, and as power grids become greener, EVs become cleaner over time. Public transit upgrades, rail, bike-sharing, and smart traffic systems further reduce fuel use and urban air pollution.',
+                audienceLabel: 'Audience Relevance',
                 audience: 'For students and young professionals, transportation choices are one of the fastest personal ways to reduce carbon impact.'
             },
             {
                 label: 'Renewable Power',
                 title: 'Solar and Wind Energy Expansion',
                 body: 'Solar and wind generate electricity without direct carbon emissions during operation. Falling costs, better efficiency, and large-scale deployment have made renewables one of the fastest-growing global energy sources and a key strategy for reducing fossil fuel dependence.',
+                audienceLabel: 'Audience Relevance',
                 audience: 'For communities, renewable expansion strengthens long-term energy security while reducing pollution.'
             },
             {
                 label: 'Smart Grids',
                 title: 'Smart Energy Grids That Reduce Waste',
                 body: 'Traditional grids are less adaptive to real-time demand changes. Smart grids use sensors, automation, and analytics to detect outages faster, reduce transmission losses, and better integrate renewables into daily operations.',
+                audienceLabel: 'Audience Relevance',
                 audience: 'For city residents and policymakers, smarter grids mean fewer outages and more efficient infrastructure.'
             },
             {
                 label: 'AI Monitoring',
                 title: 'AI Tools for Climate and Weather Monitoring',
                 body: 'AI can process large climate datasets to forecast extreme weather, track ecosystem changes, monitor deforestation, and improve risk planning. Better forecasting enables earlier action from governments, schools, businesses, and households.',
+                audienceLabel: 'Audience Relevance',
                 audience: 'For educators and students, this is a strong example of AI used for public-good decision support.'
             },
             {
                 label: 'Precision Agriculture',
                 title: 'Precision Agriculture and Resource Efficiency',
                 body: 'Drones, sensors, GPS mapping, and analytics allow farmers to apply water, fertilizer, and pesticides only where needed. This reduces waste, lowers runoff into waterways, and supports stronger yields with less environmental damage.',
+                audienceLabel: 'Audience Relevance',
                 audience: 'For communities reliant on agriculture, these tools can protect soil and water while sustaining food production.'
             },
             {
                 label: 'Water Tech',
                 title: 'Water Conservation and Leakage Detection',
                 body: 'Smart meters and sensor networks can detect leaks before they become major failures. Automated irrigation, water recycling, and better treatment systems reduce freshwater losses and support long-term water sustainability.',
+                audienceLabel: 'Audience Relevance',
                 audience: 'For everyone, better water technology protects a limited resource under pressure from climate change and population growth.'
             }
         ];
@@ -394,36 +400,42 @@
                 label: 'Keep Devices Longer',
                 title: 'Extend Device Lifespan Before Upgrading',
                 action: 'Delay non-essential upgrades, keep software current, and replace batteries or storage before replacing the whole device.',
+                audienceLabel: 'Environmental Impact',
                 impact: 'Manufacturing is often the largest part of a device footprint. Longer use means lower resource extraction and less e-waste.'
             },
             {
                 label: 'Repair First',
                 title: 'Repair Instead of Replacing',
                 action: 'For cracked screens, weak batteries, and charging issues, compare repair options before buying new hardware.',
+                audienceLabel: 'Environmental Impact',
                 impact: 'Repair conserves materials, lowers emissions from manufacturing, and supports a stronger right-to-repair culture.'
             },
             {
                 label: 'Recycle Responsibly',
                 title: 'Use Certified E-Waste Programs',
                 action: 'Wipe personal data and deliver old devices to trusted manufacturer, retailer, or local certified recycling programs.',
+                audienceLabel: 'Environmental Impact',
                 impact: 'Responsible recycling recovers valuable materials and prevents hazardous waste from contaminating ecosystems.'
             },
             {
                 label: 'Save Energy',
                 title: 'Choose Efficient Devices and Settings',
                 action: 'Enable power-saving modes, lower brightness, and use sleep settings instead of leaving devices running continuously.',
+                audienceLabel: 'Environmental Impact',
                 impact: 'Daily efficiency habits reduce electricity use and indirectly lower emissions from power generation.'
             },
             {
                 label: 'Clean Up Cloud Data',
                 title: 'Delete Unnecessary Backups and Files',
                 action: 'Remove duplicates, old downloads, and unused backups. Archive only what matters and avoid redundant copies.',
+                audienceLabel: 'Environmental Impact',
                 impact: 'Cloud storage relies on physical data centers. Less unnecessary storage helps reduce infrastructure demand.'
             },
             {
                 label: 'Buy Better',
                 title: 'Support Sustainability-Focused Companies',
                 action: 'Prioritize products from companies with repair options, take-back programs, transparent reporting, and renewable energy use.',
+                audienceLabel: 'Environmental Impact',
                 impact: 'Consumer demand can push the tech industry toward cleaner manufacturing and responsible sourcing.'
             }
         ];
@@ -462,14 +474,17 @@
         ];
 
         function renderTopicPanel(panelEl, item) {
+            const bodyText = item.body || item.action || item.text || '';
+            const secondaryLabel = item.audienceLabel || 'Why It Matters';
+            const secondaryText = item.audience || item.impact || item.relevance || '';
             panelEl.classList.remove('fade-in');
             panelEl.innerHTML = `
                 <p class="text-xs uppercase tracking-wide text-emerald-300">Focus Area</p>
                 <h4 class="mt-1 text-xl font-bold text-white">${item.title}</h4>
-                <p class="mt-3 text-sm leading-relaxed text-slate-300">${item.body}</p>
+                <p class="mt-3 text-sm leading-relaxed text-slate-300">${bodyText}</p>
                 <div class="mt-4 rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
-                    <p class="text-xs uppercase tracking-wide text-emerald-200">Audience Relevance</p>
-                    <p class="mt-1 text-sm text-slate-100">${item.audience}</p>
+                    <p class="text-xs uppercase tracking-wide text-emerald-200">${secondaryLabel}</p>
+                    <p class="mt-1 text-sm text-slate-100">${secondaryText}</p>
                 </div>
             `;
             panelEl.classList.add('fade-in');
